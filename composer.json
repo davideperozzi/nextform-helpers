@@ -1,0 +1,21 @@
+{
+    "name": "davideperozzi/nextform-helpers",
+    "description": "Helpers for the nextform php library",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Davide Perozzi",
+            "email": "davide@dorfjungs.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Nextform\\Helpers\\": "src/Nextform/Helpers"
+        }
+    },
+    "minimum-stability": "beta",
+    "require-dev": {
+        "phpunit/phpunit": "~5.1"
+    }
+}
