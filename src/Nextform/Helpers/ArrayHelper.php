@@ -32,7 +32,12 @@ class ArrayHelper
 			}
 			else {
 				if (is_integer($key)) {
-					$result[$key] = $value;
+					if (is_null($lastResult)) {
+						$result['[]'][$key] = $value;
+					}
+					else {
+						$result[$key] = $value;
+					}
 				}
 				else {
 					if ( ! is_null($lastResult)) {
@@ -45,6 +50,15 @@ class ArrayHelper
 		}
 
 		return $result;
+	}
+
+	/**
+	 * @param string
+	 * @return string
+	 */
+	public static function getSerializedArrayEntry($str) {
+		$parts = explode('[', $str);
+		return $parts[0];
 	}
 
 	/**
