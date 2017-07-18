@@ -40,9 +40,12 @@ class ArrayHelper
 					}
 				}
 				else {
-					if ( ! is_null($lastResult)) {
-						$newKey = '[' . $key . ']';
+					$newKey = '[' . $key . ']';
 
+					if (is_null($lastResult)) {
+						$result[$newKey] = $value;
+					}
+					else {
 						$lastResult[$lastKey . $newKey] = $value;
 					}
 				}
