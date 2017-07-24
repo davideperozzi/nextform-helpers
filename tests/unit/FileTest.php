@@ -2,15 +2,13 @@
 
 namespace Nextform\Helpers\Tests;
 
-use PHPUnit\Framework\TestCase;
 use Nextform\Helpers\FileHelper;
+use PHPUnit\Framework\TestCase;
 
 class FileTest extends TestCase
 {
-    /**
-     *
-     */
-    public function testValidUploadedFileCheck() {
+    public function testValidUploadedFileCheck()
+    {
         $this->assertTrue(FileHelper::isUploadedFile([
             'name' => 'test.jpg',
             'type' => 'image/jpeg',
@@ -20,11 +18,10 @@ class FileTest extends TestCase
         ]));
     }
 
-    /**
-     *
-     */
-    public function testInvalidUploadedFileCheck() {
-         $this->assertFalse(FileHelper::isUploadedFile([
+
+    public function testInvalidUploadedFileCheck()
+    {
+        $this->assertFalse(FileHelper::isUploadedFile([
             'name' => 'test.jpg',
             'type' => 'image/jpeg',
             // 'tmp_name' => '/private/...',

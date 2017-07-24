@@ -8,7 +8,8 @@ class FileHelper
      * @param array $data
      * @return boolean
      */
-    public static function isUploadedFile($data) {
+    public static function isUploadedFile($data)
+    {
         $keys = ['name', 'type', 'tmp_name', 'error', 'size'];
 
         if (count($data) == count($keys)) {
